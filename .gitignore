@@ -2,6 +2,5 @@
 .vscode/
 
 plus_can.code-workspace
-platformio.ini
 
 *.exe
