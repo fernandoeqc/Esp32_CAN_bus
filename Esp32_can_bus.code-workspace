@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "CAN_receiver"
+		},
+		{
+			"path": "CAN_sender"
+		}
+	],
+	"settings": {}
+}

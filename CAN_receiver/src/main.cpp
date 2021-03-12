@@ -8,12 +8,12 @@ String desb = "desb";
 
 
 
-apagar projeto, criar novo e colar arquivos do github
+//apagar projeto, criar novo e colar arquivos do github
 
 void setup()
 {
     pinMode(LED1, OUTPUT);
-
+    
     Serial.begin(115200);
     while (!Serial);
 
