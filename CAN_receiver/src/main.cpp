@@ -7,7 +7,6 @@ String desb = "desb";
 #define LED1 2
 
 
-
 //apagar projeto, criar novo e colar arquivos do github
 
 void setup()
