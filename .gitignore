@@ -1,6 +1,7 @@
 .pio
 .vscode/
 
-plus_can.code-workspace
+*.code-workspace
 
 *.exe
+
