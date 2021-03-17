@@ -10,23 +10,24 @@ char command[LEN_COMM] = {"desb"};
 String bloq = "bloq";
 String desb = "desb";
 
-/* void detectBitRate()
+#define SIZE_BITRATE 11
+void detectBitRate()
 {
-    double bitRate[12] {1000E3, 500E3, 250E3, 200E3, 125E3, 100E3, 80E3, 50E3, 40E3, 20E3, 10E3, 5E3};
+    double bitRate[SIZE_BITRATE] {1000E3, 500E3, 250E3, 200E3, 125E3, 100E3, 80E3, 50E3, 40E3, 20E3, 10E3};
     CAN.observe();
 
-    
-    for (int i = 0; i < 12; i++)
+    for (int i = 0; i < SIZE_BITRATE; i++)
     {
-        if(CAN.begin(bitRate[i]))
+        if(!CAN.begin(bitRate[i]))
         {
-            Serial.println("Starting CAN failed!");
+            Serial.println("Starting CAN failed at bit: ");
+            Serial.println(bitRate[i]);
             while (1);
         }
-        Serial.println(bitRate[i]);
+        Serial.println("Wait");
 
         int time_old = millis();
-        while(millis() - time_old < 1000)
+        while(millis() - time_old < 2000)
         {
             
             int packetSize = CAN.parsePacket();
@@ -39,7 +40,8 @@ String desb = "desb";
         } 
     }
     Serial.println("fim");
-} */
+    while(1);
+}
 
 void setup()
 {
@@ -51,7 +53,7 @@ void setup()
     Serial.println("CAN Sender");
 
     // start the CAN bus at 500 kbps
-    if (!CAN.begin(500E3))
+    if (!CAN.begin(100E3))
     {
         Serial.println("Starting CAN failed!");
         while (1);
@@ -88,4 +90,4 @@ void loop()
 
 
 
-can nao funciona quando tira os resistores 120h
+//can nao funciona quando tira os resistores 120h
